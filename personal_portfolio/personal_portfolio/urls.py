@@ -20,6 +20,8 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("projects/", include("projects.urls")),
+    path("blog/", include("blog.urls")),
+
     # Redirects homepage to Projects
     path('', RedirectView.as_view(url='/projects/')),
 ]

@@ -2,3 +2,11 @@
 
 A web project in Python demonstrating use of the Django framework.
 
+## Commands
+
+Run server.
+
+```
+python manage.py runserver
+```
+

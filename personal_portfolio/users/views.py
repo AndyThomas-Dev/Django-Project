@@ -10,6 +10,7 @@ def dashboard(request):
 
 
 def register(request):
+    # gets users/register.html
     if request.method == "GET":
         return render(
             request, "users/register.html",

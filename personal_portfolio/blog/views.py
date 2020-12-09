@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .models import Post, Comment
 from .forms import CommentForm
-
+from django.http import HttpResponse, HttpResponseNotFound
 
 def blog_index(request):
     posts = Post.objects.all().order_by('-created_on')
@@ -28,23 +28,28 @@ def blog_category(request, category):
 
 
 def blog_detail(request, pk):
-    post = Post.objects.get(pk=pk)
 
-    form = CommentForm()
-    if request.method == 'POST':
-        form = CommentForm(request.POST)
-        if form.is_valid():
-            comment = Comment(
-                author=form.cleaned_data["author"],
-                body=form.cleaned_data["body"],
-                post=post
-            )
-            comment.save()
+    try:
+        post = Post.objects.get(pk=pk)
+        form = CommentForm()
+        if request.method == 'POST':
+            form = CommentForm(request.POST)
+            if form.is_valid():
+                comment = Comment(
+                    author=form.cleaned_data["author"],
+                    body=form.cleaned_data["body"],
+                    post=post
+                )
+                comment.save()
 
-    comments = Comment.objects.filter(post=post)
-    context = {
-        "post": post,
-        "comments": comments,
-        "form": form,
-    }
+        comments = Comment.objects.filter(post=post)
+        context = {
+            "post": post,
+            "comments": comments,
+            "form": form,
+        }
+
+    except Post.DoesNotExist:
+        return HttpResponseNotFound("Blog post not found.")
+
     return render(request, "blog_detail.html", context)

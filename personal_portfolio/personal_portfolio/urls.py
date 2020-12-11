@@ -17,13 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
 from django.conf.urls import include, url
+from . import views
 
 urlpatterns = [
     url(r"^", include("users.urls")),
+    url(r'^hello/', views.hello, name='hello'),
 
     path("admin/", admin.site.urls),
     path("projects/", include("projects.urls")),
     path("blog/", include("blog.urls")),
+
 
     # Redirects homepage to Projects
     path('', RedirectView.as_view(url='/projects/')),

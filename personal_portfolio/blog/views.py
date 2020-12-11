@@ -5,6 +5,13 @@ from django.shortcuts import render
 from .models import Post, Comment
 from .forms import CommentForm
 from django.http import HttpResponse, HttpResponseNotFound
+from django.contrib.auth.decorators import login_required
+
+
+def hello(request):
+    text = """<h1>welcome to my app !</h1>"""
+    return HttpResponse(text)
+
 
 def blog_index(request):
     posts = Post.objects.all().order_by('-created_on')
@@ -28,7 +35,6 @@ def blog_category(request, category):
 
 
 def blog_detail(request, pk):
-
     try:
         post = Post.objects.get(pk=pk)
         form = CommentForm()

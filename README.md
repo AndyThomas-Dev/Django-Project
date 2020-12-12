@@ -1,8 +1,8 @@
 # Django Project
 
-A web project in Python demonstrating use of the Django framework.
+A web project in Python demonstrating use of the Django framework. The project encompasses both a blog and a projects section as well as an 'About' page.
 
-This application was built with the aid of a guide from [RealPython.com](https://realpython.com/get-started-with-django-1/#add-bootstrap-to-your-app).
+The website could be purposed for a variety of uses. For example, a developer wishing to showcase his projects alongside a personal blog.
 
 ## Commands
 
@@ -13,7 +13,18 @@ python manage.py runserver
 ```
 
 ## Users
-Main administrator.
+The project contains functionality for user access.
 
+The details for the test administrator account is as below:
+```
 andy-test
 test1
+```
+## Projects
+
+## Blog
+
+Administrators can add new blog posts via 
+
+## About
+

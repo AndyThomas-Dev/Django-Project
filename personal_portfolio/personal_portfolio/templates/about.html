@@ -8,23 +8,23 @@
     }
 </style>
 
+<title>About</title>
+
 <!--Added login/logout links-->
 <div class="col-md-8 offset-md-2">
     <h1>About</h1>
     <hr>
-    {% for post in posts %}
-    <h2><a href="{% url 'blog_detail' post.pk%}">{{ post.title }}</a></h2>
-    <small>
-        {{ post.created_on.date }} |&nbsp;
-        Categories:&nbsp;
-        {% for category in post.categories.all %}
-        <a href="{% url 'blog_category' category.name %}">
-            {{ category.name }}
-        </a>&nbsp;
-        {% endfor %}
-    </small>
-    <p>{{ post.body | slice:":400" }}...</p>
-    {% endfor %}
+        <img src="/static/img/2.jpg" alt="" width="100%">
+    <hr>
+
+    <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+
+    <hr>
+    <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris convallis augue ac felis feugiat, non sollicitudin ipsum hendrerit. Nunc rhoncus velit diam, et tincidunt risus mollis eget. Mauris ornare viverra sem, ut elementum velit euismod vel. Nulla facilisi. Fusce efficitur lacus a blandit pellentesque. Ut tristique, turpis a ultrices vulputate, sapien nibh commodo elit, a condimentum quam velit quis magna. In euismod turpis ac velit eleifend rhoncus. Integer eget tellus eget massa semper hendrerit sit amet nec magna. Sed id nunc dictum, maximus tortor in, gravida ante. Integer luctus purus vel neque lacinia, vel congue nulla maximus. Vivamus sit amet maximus nunc. Suspendisse molestie lobortis lacinia. Ut ullamcorper fermentum justo, sit amet blandit quam tempus at.
+</p>
+
+    <hr>
 </div>
 
 {% endblock %}

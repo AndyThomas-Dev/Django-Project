@@ -19,13 +19,13 @@ andy-test
 test1
 ```
 ## Projects
-The main project page, which is also the hompage, displays a description of each project along with a small image.
+The main project page, which is also the hompage, displays a description of each project along with a small image. Each individual project page displays the full image and more detail on the project.
 
 ## Blog
-Each individual blog post ;Displays a blog post along with a comment section, which visitors can add to.
+The main blog page displays a summary of all the currently uploaded blog posts. Each individual blog post displays post content along with a comment section, which visitors can add to.
 
-Administrators can add new blog posts via in the administration section.
+Administrators can add new blog posts through the administration section.
 
 ## About
-There is largely static About page to display information about the author.
+There is largely static About page that is intended to display information about the author.
 

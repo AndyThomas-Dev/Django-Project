@@ -11,7 +11,7 @@ python manage.py runserver
 ```
 
 ## Users & User Access
-The project contains functionality for user access including registration and login pages. Some content only displays if the user is signed in. For example, the links for login and logout are dependent on whether the user is logged in or not. 
+The project contains functionality for user access including registration and login pages. Some content only displays if the user is signed in. For example, the links for login and logout are dependent on whether the user is logged in or not. The links for the members area is also only available to view when logged in. 
 
 The details for the test administrator account is as below:
 ```

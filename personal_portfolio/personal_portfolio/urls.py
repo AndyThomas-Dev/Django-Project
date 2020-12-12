@@ -23,11 +23,11 @@ urlpatterns = [
     url(r"^", include("users.urls")),
     url(r'^hello/', views.hello, name='hello'),
     url(r'^about/', views.get_about, name='about'),
+    url(r'^members/', views.get_members, name='members'),
 
     path("admin/", admin.site.urls),
     path("projects/", include("projects.urls")),
     path("blog/", include("blog.urls")),
-
 
     # Redirects homepage to Projects
     path('', RedirectView.as_view(url='/projects/')),
